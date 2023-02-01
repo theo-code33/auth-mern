@@ -43,6 +43,27 @@ const ShopController = {
         } catch (error) {
             res.status(500).send({error: error.message})
         }
+    },
+    update: async (req, res) => {
+        const { id } = req.params
+        const { ...datas } = req.body
+        try {
+            const shop = await Shop.findByIdAndUpdate(id, {...datas}, {new: true})
+            if(!shop) return res.status(404).send({error: "Shop not found"})
+            res.send(shop)
+        } catch (error) {
+            res.status(500).send({error: error.message})
+        }
+    },
+    delete: async (req, res) => {
+        const { id } = req.params
+        try {
+            const shop = await Shop.findByIdAndDelete(id)
+            if(!shop) return res.status(404).send({error: "Shop not found"})
+            res.send(shop)
+        } catch (error) {
+            res.status(500).send({error: error.message})
+        }
     }
 
 }
