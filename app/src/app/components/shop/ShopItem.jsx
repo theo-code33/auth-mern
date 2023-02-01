@@ -9,9 +9,6 @@ const ShopItem = ({shop}) => {
                 </div>
                 <div className="shop-item__content">
                     <h3 className="shop-item__title">{shop.name}</h3>
-                    <div className="shop-item__actions">
-                        <button className="shop-item__button">En savoir plus</button>
-                    </div>
                 </div>
             </Link>
         </div>

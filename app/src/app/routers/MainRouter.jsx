@@ -8,6 +8,7 @@ import CreateShop from "../pages/shop/CreateShop";
 import ShopList from "../pages/shop/ShopList";
 import ShopListUser from "../pages/shop/ShopListUser";
 import ShopSingle from "../pages/shop/ShopSingle";
+import UpdateShop from "../pages/shop/UpdateShop";
 import Account from "../pages/user/Account";
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -38,6 +39,12 @@ const MainRouter = () => {
                 <Route path="/my-shops" element={
                     <ProtectedRoute>
                         <ShopListUser />
+                    </ProtectedRoute>
+                }
+                />
+                <Route path="/update-shop/:id" element={
+                    <ProtectedRoute>
+                        <UpdateShop />
                     </ProtectedRoute>
                 }
                 />

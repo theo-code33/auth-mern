@@ -19,7 +19,7 @@ const ShopSingle = () => {
         {shop && 
             <div className="shop-single">
                 <div className="shop-single__image">
-                    <img src="https://images.unsplash.com/photo-1611831920003-8b8b2b2b2b1f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="shop item" />
+                    <img src={shop.imgUrl} alt="shop item" />
                 </div>
                 <div className="shop-single__content">
                     <h3 className="shop-single__title">{shop.name}</h3>
