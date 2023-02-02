@@ -20,5 +20,5 @@ app.use('/api', ShopRouter)
 app.use('/api', UserRouter)
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`App listening on port ${port}`)
 })

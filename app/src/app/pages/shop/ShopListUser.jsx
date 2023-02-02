@@ -23,7 +23,6 @@ const ShopListUser = () => {
                     <ActionsButton id={shop._id} setShops={setShopList}/>
                 </div>
             ))}
-
         </section>
      );
 }

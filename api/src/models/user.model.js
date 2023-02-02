@@ -20,7 +20,7 @@ const userSchema = new Schema({
     },
     shops: [
         {
-            type: [Schema.Types.ObjectId],
+            type: [mongoose.Schema.Types.ObjectId],
             ref: 'Shop',
         }
     ]

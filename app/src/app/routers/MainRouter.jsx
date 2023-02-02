@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import { UserContext } from "../../src/context/UserContext";
 import AuthPage from "../pages/auth/AuthPage";
+import ForgotPasswordPage from "../pages/auth/ForgotPasswordPage";
+import ResetPasswordPage from "../pages/auth/ResetPasswordPage";
 import HomePage from "../pages/HomePage";
 import NotFoundPage from "../pages/NotFoundPage";
 import CreateShop from "../pages/shop/CreateShop";
@@ -23,7 +25,13 @@ const MainRouter = () => {
                 <Route path="/shop/:id" element={<ShopSingle />} />
                 <Route path="*" element={<NotFoundPage />} />
                 
-                {!user && <Route path="/auth" element={<AuthPage />} />}
+                {!user && 
+                <>
+                    <Route path="/auth" element={<AuthPage />} />
+                    <Route path="/auth/forgot-password" element={<ForgotPasswordPage />} />
+                    <Route path="/auth/reset-password/:token" element={<ResetPasswordPage />} />
+                </>
+                }
 
                 <Route path="/account" element={
                     <ProtectedRoute>

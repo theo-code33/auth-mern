@@ -11,10 +11,22 @@ const signin = async (credentials) => {
     const response = await instance.post(`${API_URL}/signin`, credentials);
     return response.data;
 }
+const forgotPassword = async (credentials) => {
+    const response = await instance.post(`${API_URL}/forgot-password`, credentials);
+    return response.data;
+}
+
+const resetPassword = async (credentials) => {
+    const response = await instance.post(`${API_URL}/reset-password`, credentials);
+    return response.data;
+}
+
 
 const AuthService = {
     signup,
-    signin
+    signin,
+    forgotPassword,
+    resetPassword
 }
 
 export default AuthService;

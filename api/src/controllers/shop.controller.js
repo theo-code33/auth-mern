@@ -19,7 +19,9 @@ const ShopController = {
     },
     getAll: async (req, res) => {
         try {
-            const shops = await Shop.find({}).populate('user')
+            const shops = await Shop.find()
+                .populate('user')
+                .exec()
             res.send(shops)
         } catch (error) {
             res.status(500).send({error: error.message})
@@ -28,7 +30,9 @@ const ShopController = {
     getShopByUser: async (req, res) => {
         const { user } = req
         try {
-            const shops = await Shop.find({user: user._id}).populate('user')
+            const shops = await Shop.find({user: user._id})
+                .populate('user')
+                .exec()
             res.send(shops)
         } catch (error) {
             res.status(500).send({error: error.message})
@@ -37,7 +41,9 @@ const ShopController = {
     getOneById: async (req, res) => {
         const { id } = req.params
         try {
-            const shop = await Shop.findById(id).populate('user')
+            const shop = await Shop.findById(id)
+                .populate('user')
+                .exec()
             if(!shop) return res.status(404).send({error: "Shop not found"})
             res.send(shop)
         } catch (error) {

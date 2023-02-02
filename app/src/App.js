@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react';
 import TokenService from './src/services/token.service';
 import MainLayout from './app/layouts/MainLayout';
 import MainRouter from './app/routers/MainRouter';
+import './styles/main.scss';
 
 function App() {
   const { setUser } = useContext(UserContext);

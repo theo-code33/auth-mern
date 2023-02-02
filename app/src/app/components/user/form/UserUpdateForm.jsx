@@ -38,7 +38,7 @@ const UserUpdateForm = () => {
 
 
     return ( 
-        <Box component="form" onSubmit={handleSubmit}>
+        <Box component="form" onSubmit={handleSubmit} sx={{width: "50%", display: "flex", flexDirection: "column", gap: "20px"}}>
             <TextField 
                 id="email-input"
                 name='email'

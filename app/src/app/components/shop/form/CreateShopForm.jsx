@@ -40,6 +40,7 @@ const CreateShopForm = () => {
                 name='imgUrl'
                 label="Image de la boutique"
                 variant="outlined"
+                type='url'
                 onInput={handleChange}
             />
             <TextField 

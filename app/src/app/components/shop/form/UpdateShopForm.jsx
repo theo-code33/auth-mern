@@ -40,6 +40,7 @@ const UpdateShopForm = ({shop}) => {
                 name='imgUrl'
                 label="Image de la boutique"
                 variant="outlined"
+                type='url'
                 defaultValue={credentials.imgUrl}
                 onInput={handleChange}
             />
